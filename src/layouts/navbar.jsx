@@ -17,6 +17,10 @@ const Layout = () => {
   return (
     <div className="flex min-h-screen w-full flex-col">
       <header className="sticky top-0 flex h-16 items-center gap-4 border-b bg-background px-4 md:px-6 justify-between">
+        <div className="flex items-center gap-2 text-lg font-semibold md:text-base">
+          <Package2 className="h-6 w-6" />
+          <span>Todo App</span>
+        </div>
         <DesktopNav />
         <MobileNav />
       </header>
@@ -29,13 +33,6 @@ const Layout = () => {
 
 const DesktopNav = () => (
   <nav className="hidden md:flex md:items-center md:gap-5 lg:gap-6 text-lg font-medium md:text-sm">
-    <NavItem
-      to="/"
-      className="flex items-center gap-2 text-lg font-semibold md:text-base"
-    >
-      <Package2 className="h-6 w-6" />
-      <span className="sr-only">Acme Inc</span>
-    </NavItem>
     {navItems.map((item) => (
       <NavItem key={item.to} to={item.to}>
         {item.title}
@@ -54,13 +51,6 @@ const MobileNav = () => (
     </SheetTrigger>
     <SheetContent side="left">
       <nav className="grid gap-6 text-lg font-medium">
-        <NavItem
-          to="/"
-          className="flex items-center gap-2 text-lg font-semibold"
-        >
-          <Package2 className="h-6 w-6" />
-          <span className="sr-only">Acme Inc</span>
-        </NavItem>
         {navItems.map((item) => (
           <NavItem key={item.to} to={item.to}>
             {item.title}
